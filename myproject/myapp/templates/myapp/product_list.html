@@ -1,0 +1,32 @@
+<!-- product_list.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список товаров</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">На главную</a> <!-- Добавление ссылки на главную страницу -->
+        </nav>
+    </header>
+    <h1>Мои пакеты услуг</h1>
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Цена: {{ product.price }} руб.</p>
+            <p>Фотографии: {{ product.photos }}</p>
+            <p>Видео: {{ product.videos }}</p>
+            <p>Рилсы: {{ product.reels }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
