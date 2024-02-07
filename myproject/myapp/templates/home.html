@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="image-container">
+        <img src="{% static 'images/welcome.jpg' %}" alt="Главная заставка">
+        <div class="text-overlay">
+            <h1>Добро пожаловать на мой сайт!</h1>
+            <p>Это главная страница моего первого сайта на Django.</p>
+            <p>Я больше фотограф чем программист.</p>
+            <a href="{% url 'about' %}">О себе</a>
+        </div>
+    </div>
+    
+</body>
+</html>

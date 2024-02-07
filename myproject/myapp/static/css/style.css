@@ -1,0 +1,76 @@
+.avatar img {
+    
+    display: flex; /* Чтобы применить автоматические отступы */
+    margin: 0 auto; /* Центрируем изображение */
+}
+h1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+h2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+h3{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+p{
+    display: flex;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+a{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.image-container img {
+    width: 100%; /* Адаптируйте этот параметр под свои нужды */
+    height: auto; /* Адаптируйте этот параметр под свои нужды */
+    display: block; /* Убедитесь, что изображение блочное, чтобы правильно работать с шириной и высотой */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Сдвигаем элемент на 50% его ширины и высоты назад, чтобы центрировать точно */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон для текста */
+    color: white;
+    padding: 20px;
+    width: calc(100% - 40px); /* Вычитаем padding, чтобы избежать выхода за пределы контейнера */
+    box-sizing: border-box; /* Учитываем padding в ширине элемента */
+    border-radius: 5px;
+}
+.text-overlay h1 {
+    font-size: 34px; /* Размер для заголовков */
+}
+
+.text-overlay p {
+    font-size: 24px; /* Размер для параграфов */
+}
+
+.text-overlay a {
+    font-size: 28px; /* Размер для ссылок */
+    padding: 10px 20px; /* Небольшой padding для улучшения визуального восприятия ссылки */
+    border-radius: 5px; /* Скругление углов для ссылки */
+    background-color: rgba(255, 255, 255, 0.3); /* Немного прозрачный белый фон для ссылки */
+}
+
+
+
