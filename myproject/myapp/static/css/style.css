@@ -33,44 +33,95 @@ a{
     align-items: flex-end;
 }
 
+
 .image-container {
     position: relative;
     text-align: center;
-    color: white;
+    max-width: 100%; /* Ограничиваем ширину контейнера, если необходимо */
 }
 
 .image-container img {
-    width: 100%; /* Адаптируйте этот параметр под свои нужды */
-    height: auto; /* Адаптируйте этот параметр под свои нужды */
-    display: block; /* Убедитесь, что изображение блочное, чтобы правильно работать с шириной и высотой */
+    width: 100%; /* Заставляет изображение растягиваться на всю ширину контейнера */
+    height: auto; /* Поддерживает пропорции изображения */
 }
 
 .text-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Сдвигаем элемент на 50% его ширины и высоты назад, чтобы центрировать точно */
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон для текста */
-    color: white;
+    transform: translate(-50%, -50%); /* Центрирует текст на изображении */
+    color: white; /* Цвет текста */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для улучшения читаемости */
     padding: 20px;
-    width: calc(100% - 40px); /* Вычитаем padding, чтобы избежать выхода за пределы контейнера */
-    box-sizing: border-box; /* Учитываем padding в ширине элемента */
-    border-radius: 5px;
-}
-.text-overlay h1 {
-    font-size: 34px; /* Размер для заголовков */
-}
-
-.text-overlay p {
-    font-size: 24px; /* Размер для параграфов */
+    border-radius: 10px; /* Скругленные углы для фона */
 }
 
 .text-overlay a {
-    font-size: 28px; /* Размер для ссылок */
-    padding: 10px 20px; /* Небольшой padding для улучшения визуального восприятия ссылки */
-    border-radius: 5px; /* Скругление углов для ссылки */
-    background-color: rgba(255, 255, 255, 0.3); /* Немного прозрачный белый фон для ссылки */
+    color: #FFD700; /* Золотой цвет для ссылок, измените по желанию */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3); /* Немного прозрачный фон для ссылки */
+    padding: 8px 12px;
+    border-radius: 5px; /* Скругленные углы для ссылок */
+    transition: background-color 0.3s; /* Плавный переход фона при наведении */
+}
+
+.text-overlay a:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Изменение фона при наведении */
 }
 
 
 
+body {
+    font-family: Arial, sans-serif; /* Используйте предпочитаемый шрифт */
+    padding: 20px; /* Небольшой отступ от краев страницы */
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: rgba(0, 123, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+li {
+    margin: 10px 0; /* Небольшой отступ между элементами списка */
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-card {
+    width: 300px; /* Ширина карточки */
+    height: 400px; /* Высота карточки */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    background-color: #f2f2f2; /* Серый фон для карточек */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределение контента внутри карточки */
+    margin: 10px; /* Отступы вокруг карточки */
+}
+
+.product-card img {
+    max-width: 100%; /* Заставляет изображение быть не шире, чем карточка */
+    height: auto; /* Поддерживает пропорции изображения */
+}
