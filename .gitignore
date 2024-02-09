@@ -20,3 +20,4 @@ some_folder/*
 !some_folder/keep_this_file.txt
 
 *.mysite
+*.__pycache__
