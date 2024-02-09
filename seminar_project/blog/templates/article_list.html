@@ -1,0 +1,15 @@
+<!-- Содержимое для article_detail.html -->
+<h1>{{ article.title }}</h1>
+<p>{{ article.text }}</p>
+
+<h2>Комментарии</h2>
+{% for comment in article.comments.all %}
+    <div class="comment">
+        <p><strong>Автор:</strong> {{ comment.author }}</p>
+        <p>{{ comment.text }}</p>
+        <p><strong>Дата:</strong> {{ comment.created_date }}</p>
+        {% if comment.updated_date > comment.created_date %}
+            <p><em>Изменено</em></p>
+        {% endif %}
+    </div>
+{% endfor %}

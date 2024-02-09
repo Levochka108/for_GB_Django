@@ -19,9 +19,9 @@ class Product(models.Model):
         return self.name
 
 class Order(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='orders')
-    products = models.ManyToManyField(Product, through='OrderItem')
-    created_at = models.DateTimeField(auto_now_add=True)
+    customer = models.ForeignKey(Customer, related_name='shop_orders', on_delete=models.CASCADE)
+    products = models.ManyToManyField(Product, related_name='shop_ordered_products')
+    order_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Order {self.id} by {self.customer.name}"

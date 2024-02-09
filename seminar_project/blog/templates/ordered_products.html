@@ -1,0 +1,16 @@
+<!-- Содержимое для ordered_products.html -->
+<h2>Заказы за неделю</h2>
+<ul>
+    {% for product in week_products %}
+        <li>{{ product.name }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Заказы за месяц</h2>
+<ul>
+    {% for product in month_products %}
+        <li>{{ product.name }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Зак
