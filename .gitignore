@@ -18,3 +18,5 @@ node_modules/
 # Игнорирование всех файлов в папке, за исключением одного файла
 some_folder/*
 !some_folder/keep_this_file.txt
+
+*.mysite
