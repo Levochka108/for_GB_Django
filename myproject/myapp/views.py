@@ -6,6 +6,8 @@ from datetime import date, timedelta
 from django.shortcuts import get_object_or_404, render
 from .models import Article
 from .models import Customer, Order
+from .forms import ProductForm
+
 
 
 # Create your views here.
@@ -47,3 +49,13 @@ def article_detail(request, pk):
 def customer_orders(request, customer_id):
     orders = Order.objects.filter(customer_id=customer_id).prefetch_related('products')
     return render(request, 'shop/customer_orders.html', {'orders': orders})
+
+def create_product_view(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Перенаправление на новую страницу или отображение сообщения об успехе
+    else:
+        form = ProductForm()
+    return render(request, 'myapp/create_product.html', {'form': form})
