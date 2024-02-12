@@ -1,5 +1,6 @@
 venv
-__pycache__
+__pycache__/
+
 # Игнорирование конкретных файлов
 secret_file.txt
 
@@ -25,4 +26,3 @@ some_folder/*
 *.myapp
 *.__pycache__
 
-мне нудно исключить все лишние файлы и данные
