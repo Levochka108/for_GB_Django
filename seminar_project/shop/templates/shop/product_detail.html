@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ product.title }}</h2>
+<img src="{{ product.photo.url }}" alt="{{ product.title }}" width="300"> <!-- Убедитесь, что у продукта есть поле фото -->
+<p>Описание: {{ product.description }}</p>
+<p>Цена: {{ product.price }} руб.</p>
+<p>Количество фотографий: {{ product.photos }}</p>
+<p>Количество видео: {{ product.videos }}</p>
+<p>Количество рилсов: {{ product.reels }}</p>
+{% endblock %}

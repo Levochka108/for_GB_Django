@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Мои заказы</h2>
+<ul>
+    {% for order in orders %}
+    <li>
+        Заказ №{{ order.id }}: 
+        <ul>
+            {% for product in order.products.all %}
+            <li>{{ product.title }} - {{ product.price }} руб.</li>
+            {% endfor %}
+        </ul>
+        Общая сумма: {{ order.total_sum }} руб.
+        <a href="{% url 'order-detail' order.id %}">Подробнее</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
