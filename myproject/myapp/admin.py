@@ -5,3 +5,6 @@ admin.site.register(Customer)
 admin.site.register(Product)
 admin.site.register(Order)
 admin.site.register(OrderProduct)
+
+def test():
+    pass
